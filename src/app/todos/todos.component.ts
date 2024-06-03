@@ -7,7 +7,22 @@ import { TodosService } from '../todos.service';
   styleUrls: ['./todos.component.scss'],
 })
 export class TodosComponent {
-  constructor(private todosService: TodosService) {}
 
-  randomMethod() {}
+  todos: any[] = [];
+
+  constructor(private todosService: TodosService)
+  {
+    this.populateTodos();
+  }
+
+populateTodos(): void
+{
+  this.todosService.getTodos().subscribe((data: Object) => {
+  this.todos = data as any[];});
+}
+
+  randomMethod()
+  {
+
+  }
 }

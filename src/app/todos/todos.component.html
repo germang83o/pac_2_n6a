@@ -2,6 +2,12 @@
   <h1 class="mt-5">Realizar la consigna debajo de este mensaje</h1>
 </div>
 
+<ul class="lista">
+  <li *ngFor="let todo of todos">
+    {{ todo.title }}
+  </li>
+</ul>
+
 <!-- Html faltante -->
 <div>
   <button class="btn btn-primary" (click)="randomMethod()">Search</button>
